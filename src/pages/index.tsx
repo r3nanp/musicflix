@@ -1,17 +1,11 @@
-import Head from 'next/head'
+import Layout from '../components/Layout'
 
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>MusicFlix</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <main>
-        <h1>testing...</h1>
+        <Layout />
       </main>
-        
     </>
   )
 }
