@@ -41,12 +41,12 @@ export default class MyDocument extends Document {
     return (
       <Html lang="pt">
         <Head>
-          <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+          <meta charSet="utf-8" />
           <link
             href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700&display=swap"
             rel="stylesheet"
           />
-          <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+          <link rel="icon" href="/favicon.ico" />
         </Head>
         <body>
           <Main />
