@@ -7,7 +7,7 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
   body {
-    background: var(--black);
+    background: var(--background);
     color: var(--white);
     font: 400 16px Roboto, system-ui, sans-serif;
   }
@@ -17,14 +17,14 @@ export default createGlobalStyle`
   }
 
   :root {
-    --primary: ${props => props.theme.colors.primary}
-    --white: ${props => props.theme.colors.white}
-    --black: ${props => props.theme.colors.black}
-    --blackLighter: ${props => props.theme.colors.blackLighter}
-    --grayLight: ${props => props.theme.colors.grayLight}
-    --grayMedium: ${props => props.theme.colors.grayMedium}
-    --lightblue: ${props => props.theme.colors.lightblue}
-    --green: ${props => props.theme.colors.green}
-    --outline: ${props => props.theme.colors.outline}
+    --primary: ${props => props.theme.colors.primary};
+    --white: ${props => props.theme.colors.white};
+    --background: ${props => props.theme.colors.background};
+    --blackLighter: ${props => props.theme.colors.blackLighter};
+    --grayLight: ${props => props.theme.colors.grayLight};
+    --grayMedium: ${props => props.theme.colors.grayMedium};
+    --lightblue: ${props => props.theme.colors.lightblue};
+    --green: ${props => props.theme.colors.green};
+    --outline: ${props => props.theme.colors.outline}; 
   }
 `
