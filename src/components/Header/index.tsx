@@ -1,11 +1,15 @@
-import React from 'react'
+import Image from 'next/image'
 
-import { Container } from './styles'
+import { Container, Nav, VideoButton } from './styles'
 
 const Header: React.FC = () => {
   return (
     <Container>
-      <h1>Header</h1>
+      <Nav>
+        <Image src="/icon.png" width="168" height="20" />
+
+        <VideoButton>Novo vídeo</VideoButton>
+      </Nav>
     </Container>
   )
 }
