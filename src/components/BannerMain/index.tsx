@@ -4,8 +4,8 @@ import YoutubeIFrame from './components/YoutubeIFrame'
 import { Container, WrapperContent, WrapperItem, VideoTitle } from './styles'
 
 interface VideoProps {
-  url: string
-  videoTitle: string
+  url: string | undefined
+  videoTitle: string | undefined
 }
 
 const BannerMain: React.FC<VideoProps> = ({ url, videoTitle }) => {
