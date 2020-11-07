@@ -3,11 +3,11 @@ import Header from '../Header'
 
 import { Container } from './styles'
 
-const Layout: React.FC = () => {
+const Layout: React.FC = ({ children }) => {
   return (
     <Container>
       <Header />
-
+      {children}
       <Footer />
     </Container>
   )
