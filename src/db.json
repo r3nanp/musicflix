@@ -1,0 +1,234 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "title": "Indie Music",
+      "color": "#6BD1FF"
+    },
+    {
+      "id": 2,
+      "title": "The Strokes",
+      "color": "#00C86F"
+    },
+    {
+      "id": 3,
+      "title": "Arctic Monkeys",
+      "color": "darkblue"
+    },
+    {
+      "id": 4,
+      "title": "Filmes",
+      "color": "orange"
+    },
+    {
+      "id": 5,
+      "title": "Games",
+      "color": "red"
+    },
+    {
+      "id": 6,
+      "title": "Twenty One Pilots",
+      "color": "#6b5be2"
+    }
+  ],
+  "videos": [
+    {
+      "id": 1,
+      "categoryId": 1,
+      "title": "Ode To The Mets",
+      "url": "https://youtu.be/BjC0KUxiMhc"
+    },
+    {
+      "id": 2,
+      "categoryId": 1,
+      "title": "Sweater Weather - The Neighbourhood",
+      "url": "https://youtu.be/GCdwKhTtNNw"
+    },
+    {
+      "id": 3,
+      "categoryId": 1,
+      "title": "Chlorine - Twenty One Pilots",
+      "url": "https://youtu.be/eJnQBXmZ7Ek"
+    },
+    {
+      "id": 4,
+      "categoryId": 1,
+      "title": "On Melancholy Hill - Gorillaz",
+      "url": "https://youtu.be/04mfKJWDSzI"
+    },
+    {
+      "id": 5,
+      "categoryId": 1,
+      "title": "At the Door - The Strokes",
+      "url": "https://www.youtube.com/watch?v=9CAz_vvsK9M"
+    },
+    {
+      "id": 6,
+      "categoryId": 1,
+      "title": "Are You Bored Yet? - Wallows",
+      "url": "https://youtu.be/wIgmyE5Juzw"
+    },
+    {
+      "id": 7,
+      "categoryId": 1,
+      "title": "These Days - Wallows",
+      "url": "https://www.youtube.com/watch?v=pgWZQr7r0l0"
+    },
+    {
+      "id": 8,
+      "categoryId": 1,
+      "title": "Why'd Only Call Me When You're High?",
+      "url": "https://www.youtube.com/watch?v=6366dxFf-Os"
+    },
+    {
+      "id": 9,
+      "categoryId": 1,
+      "title": "Clint Eastwood - Gorillaz",
+      "url": "https://www.youtube.com/watch?v=1V_xRb0x9aw"
+    },
+    {
+      "id": 10,
+      "categoryId": 2,
+      "title": "Bad Decisions",
+      "url": "https://www.youtube.com/watch?v=5fbZTnZDvPA"
+    },
+    {
+      "id": 11,
+      "categoryId": 2,
+      "title": "Reptilia",
+      "url": "https://youtu.be/b8-tXG8KrWs"
+    },
+    {
+      "id": 12,
+      "categoryId": 2,
+      "title": "You Only Live Once",
+      "url": "https://youtu.be/pT68FS3YbQ4"
+    },
+    {
+      "id": 13,
+      "categoryId": 2,
+      "title": "Someday",
+      "url": "https://youtu.be/knU9gRUWCno"
+    },
+    {
+      "id": 14,
+      "categoryId": 2,
+      "title": "Hard to Explain",
+      "url": "https://youtu.be/BXkm6h6uq0k"
+    },
+    {
+      "id": 15,
+      "categoryId": 3,
+      "title": "Fluorescent Adolescent",
+      "url": "https://www.youtube.com/watch?v=ma9I9VBKPiw"
+    },
+    {
+      "id": 16,
+      "categoryId": 3,
+      "title": "Snap Out Of It",
+      "url": "https://www.youtube.com/watch?v=H8tLS_NOWLs"
+    },
+    {
+      "id": 17,
+      "categoryId": 3,
+      "title": "Four Out of Five",
+      "url": "https://youtu.be/71Es-8FfATo"
+    },
+    {
+      "id": 18,
+      "categoryId": 3,
+      "title": "R U Mine?",
+      "url": "https://www.youtube.com/watch?v=VQH8ZTgna3Q"
+    },
+    {
+      "id": 19,
+      "categoryId": 4,
+      "title": "Interestellar",
+      "url": "https://www.youtube.com/watch?v=frD_IiY_A3E"
+    },
+    {
+      "id": 20,
+      "categoryId": 4,
+      "title": "Gattaca",
+      "url": "https://www.youtube.com/watch?v=Dl0tYLbrhhs"
+    },
+    {
+      "id": 21,
+      "categoryId": 4,
+      "title": "A Chegada",
+      "url": "https://www.youtube.com/watch?v=rNciXGzYZms"
+    },
+    {
+      "id": 22,
+      "categoryId": 4,
+      "title": "Feitiço do Tempo",
+      "url": "https://www.youtube.com/watch?v=zi8d69P9NvI"
+    },
+    {
+      "id": 23,
+      "categoryId": 5,
+      "title": "Final Fantasy 7",
+      "url": "https://www.youtube.com/watch?v=I_ATSCTnUD8"
+    },
+    {
+      "id": 24,
+      "categoryId": 5,
+      "title": "Assassins Creed Valhalla",
+      "url": "https://www.youtube.com/watch?v=KDfdjB9uL0U"
+    },
+    {
+      "id": 25,
+      "categoryId": 5,
+      "title": "God of War 4",
+      "url": "https://www.youtube.com/watch?v=FyIwEFXOcaE"
+    },
+    {
+      "id": 26,
+      "categoryId": 5,
+      "title": "Resident Evil 8",
+      "url": "https://www.youtube.com/watch?v=JSapXD9vxYA"
+    },
+    {
+      "id": 27,
+      "categoryId": 5,
+      "title": "Pokémon Let's Go Pikachu/Eevee",
+      "url": "https://www.youtube.com/watch?v=L56q_k2ydrs"
+    },
+    {
+      "id": 28,
+      "categoryId": 6,
+      "title": "My Blood",
+      "url": "https://www.youtube.com/watch?v=8mn-FFjIbo8"
+    },
+    {
+      "id": 29,
+      "categoryId": 6,
+      "title": "Neon Gravestones",
+      "url": "https://www.youtube.com/watch?v=5MeQ9rA2Ifg"
+    },
+    {
+      "id": 30,
+      "categoryId": 6,
+      "title": "Tear In My Heart",
+      "url": "https://www.youtube.com/watch?v=nky4me4NP70"
+    },
+    {
+      "id": 31,
+      "categoryId": 6,
+      "title": "Car Radio",
+      "url": "https://www.youtube.com/watch?v=92XVwY54h5k"
+    },
+    {
+      "id": 10,
+      "categoryId": 6,
+      "title": "Heavydirtysoul",
+      "url": "https://www.youtube.com/watch?v=r_9Kf0D5BTs"
+    },
+    {
+      "title": "Arctic Monkeys",
+      "url": "https://www.youtube.com/watch?v=bpOSxM0rNPM",
+      "categoryId": 1,
+      "id": 32
+    }
+  ]
+}
