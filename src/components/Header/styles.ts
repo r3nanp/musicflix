@@ -9,6 +9,8 @@ export const Container = styled.header`
 `
 
 export const Nav = styled.nav`
+  background: var(--background);
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -22,9 +24,18 @@ export const Nav = styled.nav`
   border-bottom: 2px solid var(--primary);
   padding: 0 5%;
 
+  > img {
+    max-width: 168px;
+    cursor: pointer;
+  }
+
   @media (max-width: 800px) {
     height: 40px;
     justify-content: center;
+
+    > img {
+      max-width: 105px;
+    }
   }
 `
 
@@ -38,16 +49,16 @@ export const VideoButton = styled.button`
   padding: 16px 24px;
   font-size: 16px;
   font-weight: 700;
-  transition: 3ms;
+  transition: 0.5s;
 
   &:hover {
-    opacity: 0.7;
+    background: var(--primary);
   }
 
   @media (max-width: 800px) {
     width: 100%;
     background: var(--primary);
-    
+
     position: fixed;
     left: 0;
     right: 0;
