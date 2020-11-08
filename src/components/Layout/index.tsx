@@ -6,7 +6,7 @@ import { Container } from './styles'
 const Layout: React.FC = ({ children }) => {
   return (
     <Container>
-      <Header text={'Novo Vídeo'} to={'/createVideo'} />
+      <Header text="Novo Vídeo" to="/createVideo" />
       {children}
       <Footer />
     </Container>
