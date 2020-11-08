@@ -4,7 +4,7 @@ import { GetServerSideProps } from 'next'
 
 import Layout from '../components/Layout'
 import BannerMain from '../components/BannerMain'
-import Carousel, { CarouselOptions } from '../components/Carousel'
+import Carousel from '../components/Carousel'
 import LoadingGlobal from '../components/Shimmer/LoadingGlobal'
 
 export default function Home ({ data }) {
