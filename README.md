@@ -23,7 +23,7 @@
 ## Techologies used 🛠
 - Next.js
 - Typescript
-- SWR
+- Unform
 - axios
 - json-server
 - styled-components
