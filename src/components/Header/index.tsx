@@ -1,19 +1,29 @@
 import Link from 'next/link'
+import Button from '../Button'
 
-import { Container, Nav, VideoButton } from './styles'
+import { Container, Nav } from './styles'
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  to?: string | undefined
+  text?: string
+}
+
+const Header: React.FC<HeaderProps> = ({ text, to }) => {
   return (
     <Container>
       <Nav>
-        <img
-          src="https://fontmeme.com/permalink/201106/b1e120aff119f6ac8c72bccd99141a17.png"
-          alt="Logo"
-        />
-
-        <Link href="/createVideo">
+        <Link href="/">
           <a>
-            <VideoButton>Novo vídeo</VideoButton>
+            <img
+              src="https://fontmeme.com/permalink/201106/b1e120aff119f6ac8c72bccd99141a17.png"
+              alt="Logo"
+            />
+          </a>
+        </Link>
+
+        <Link href={to}>
+          <a>
+            <Button type="button">{text}</Button>
           </a>
         </Link>
       </Nav>
