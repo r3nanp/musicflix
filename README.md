@@ -26,6 +26,7 @@
 - Unform
 - axios
 - json-server
+- react-multi-carousel
 - styled-components
 - react-icons
 
@@ -82,3 +83,6 @@ $ yarn build or npm run build
 # Run server:
 $ yarn server or npm run server
 ```
+
+#### This project is a new version of Renanflix
+[Renanflix](https://github.com/r3nanp/renanflix)
