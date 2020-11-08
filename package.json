@@ -9,14 +9,15 @@
     "server": "json-server -p 3333 -d 1000 src/db.json"
   },
   "dependencies": {
+    "@unform/core": "^2.1.3",
+    "@unform/web": "^2.1.3",
     "axios": "^0.21.0",
     "next": "10.0.1",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-icons": "^3.11.0",
     "react-multi-carousel": "^2.5.5",
-    "styled-components": "^5.2.1",
-    "swr": "^0.3.8"
+    "styled-components": "^5.2.1"
   },
   "devDependencies": {
     "@types/json-server": "^0.14.2",
