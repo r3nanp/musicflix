@@ -23,7 +23,11 @@
 ## Techologies used 🛠
 - Next.js
 - Typescript
+- SWR
+- axios
+- json-server
 - styled-components
+- react-icons
 
 ## How to run and contribute 🤔
 
@@ -72,4 +76,9 @@ $ yarn dev or npm run dev
 # To build the app:
 
 $ yarn build or npm run build
+```
+
+```
+# Run server:
+$ yarn server or npm run server
 ```
