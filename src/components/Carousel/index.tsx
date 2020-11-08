@@ -5,18 +5,9 @@ import SliderItem from './components/SliderItem'
 
 import { Container, Title } from './styles'
 
-export interface CarouselOptions {
-  title: string
-  color: string
-  videos: Array<{
-    title: string
-    url: string
-  }>
-}
-
 interface Carousel {
   ignoreFirstVideo?: boolean
-  category: CarouselOptions
+  category: DataOptions
 }
 
 const Carousel: React.FC<Carousel> = ({
@@ -31,9 +22,9 @@ const Carousel: React.FC<Carousel> = ({
     }, 2000)
   }, [])
 
-  const categoryTitle = category?.title
-  const categoryColor = category?.color
-  const videos = category?.videos
+  const categoryTitle = category.title
+  const categoryColor = category.color
+  const videos = category.videos
 
   return (
     <Container>
