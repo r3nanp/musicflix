@@ -1,14 +1,13 @@
 import Head from 'next/head'
+import useApi from '../Hooks/useApi'
+import { GetServerSideProps } from 'next'
 
 import Layout from '../components/Layout'
 import BannerMain from '../components/BannerMain'
 import Carousel, { CarouselOptions } from '../components/Carousel'
 import LoadingGlobal from '../components/Shimmer/LoadingGlobal'
 
-import useApi from '../Hooks/useApi'
-
-export default function Home() {
-  const { data } = useApi<CarouselOptions[]>('categories?_embed=videos')
+export default function Home ({ data }) {
 
   if (!data) {
     return <LoadingGlobal />
@@ -18,7 +17,6 @@ export default function Home() {
     <>
       <Head>
         <title>MusicFlix</title>
-        <link rel="shortcut icon" href="/favicon.ico" />
       </Head>
 
       <Layout>
@@ -27,7 +25,7 @@ export default function Home() {
           url={`https://youtu.be/BjC0KUxiMhc`}
         />
 
-        {data?.map((category, index: number) => {
+        {data.map((category, index: number) => {
           return (
             <div key={index}>
               <Carousel ignoreFirstVideo category={category} />
@@ -38,3 +36,13 @@ export default function Home() {
     </>
   )
 }
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  const data = await useApi<CarouselOptions[]>('categories?_embed=videos')
+
+  return {
+    props: {
+      data,
+    }
+  }
+} 
