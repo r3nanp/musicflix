@@ -40,17 +40,17 @@ export default function CreateVideo() {
 
       <>
         <Header text="Nova Categoria" to="/createCategory" />
-
         <Wrapper>
-          <h1>Cadastro de vídeo</h1>
+          <h1>Cadastro de vídeo:</h1>
+          
           <Form
             ref={formRef}
+            onSubmit={handleSubmit}
             initialData={{
               title: 'Someday',
               url: 'https://www.youtube.com/watch?v=knU9gRUWCno',
               category: 'The Strokes',
             }}
-            onSubmit={handleSubmit}
           >
             <FormField
               label="Título do vídeo"
