@@ -17,12 +17,12 @@
     },
     {
       "id": 4,
-      "title": "Filmes",
+      "title": "Queen",
       "color": "orange"
     },
     {
       "id": 5,
-      "title": "Games",
+      "title": "Pixies",
       "color": "red"
     },
     {
@@ -149,7 +149,7 @@
     {
       "id": 20,
       "categoryId": 4,
-      "title": "Gattaca",
+      "title": "Love of my life",
       "url": "https://www.youtube.com/watch?v=Dl0tYLbrhhs"
     },
     {
@@ -167,8 +167,8 @@
     {
       "id": 23,
       "categoryId": 5,
-      "title": "Final Fantasy 7",
-      "url": "https://www.youtube.com/watch?v=I_ATSCTnUD8"
+      "title": "Here Comes Your Men",
+      "url": "https://www.youtube.com/watch?v=tPgf_btTFlc"
     },
     {
       "id": 24,
