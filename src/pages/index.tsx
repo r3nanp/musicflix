@@ -21,14 +21,14 @@ export default function Home ({ data }) {
 
       <Layout>
         <BannerMain
-          videoTitle={'Ode To The Mets'}
-          url={`https://youtu.be/BjC0KUxiMhc`}
+          videoTitle="Ode To The Mets"
+          url="https://youtu.be/BjC0KUxiMhc"
         />
 
         {data.map((category, index: number) => {
           return (
             <div key={index}>
-              <Carousel ignoreFirstVideo category={category} />
+              <Carousel category={category} />
             </div>
           )
         })}
