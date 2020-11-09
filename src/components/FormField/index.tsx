@@ -39,8 +39,8 @@ const FormField: React.FC<FormField> = ({
     <Wrapper>
       <Label>
         <Input
-          ref={inputRef}
           as={tag}
+          ref={inputRef}
           value={value}
           name={name}
           onChange={onChange}
