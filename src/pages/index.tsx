@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import useApi from '../Hooks/useApi'
+import fetchData from '../Hooks/useApi'
 import { GetServerSideProps } from 'next'
 
 import Layout from '../components/Layout'
@@ -38,7 +38,7 @@ export default function Home ({ data }) {
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const data = await useApi<CarouselOptions[]>('categories?_embed=videos')
+  const data = await fetchData<DataOptions[]>('categories?_embed=videos')
 
   return {
     props: {
