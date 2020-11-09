@@ -36,7 +36,7 @@ const Carousel: React.FC<Carousel> = ({
         </>
       )}
       <Slider>
-        {videos?.map((video, index) => {
+        {videos.map((video, index) => {
           if (ignoreFirstVideo && index === 0) {
             return null
           }
