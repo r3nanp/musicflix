@@ -3,10 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "start": "json-server -p 3333 -d 1000 src/db.json",
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "server": "json-server -p 3333 -d 1000 src/db.json"
+    "begin": "next start",
+    "server": "yarn start"
   },
   "dependencies": {
     "@unform/core": "^2.1.3",
