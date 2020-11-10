@@ -9,8 +9,9 @@ interface FormField {
   name: string
   value: string
   onChange: (
-    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    event: React.ChangeEvent<HTMLInputElement>
   ) => void
+  suggestions?: string[]
 }
 
 const FormField: React.FC<FormField> = ({
@@ -19,6 +20,7 @@ const FormField: React.FC<FormField> = ({
   name,
   value,
   onChange,
+  suggestions,
   ...rest
 }) => {
   const inputRef = useRef<HTMLInputElement>(null)
@@ -32,22 +34,19 @@ const FormField: React.FC<FormField> = ({
     })
   }, [fieldName, registerField])
 
-  const isTypeTextArea = type === 'textarea'
-  const tag = isTypeTextArea ? 'textarea' : 'input'
-
   return (
     <Wrapper>
       <Label>
         <Input
-          as={tag}
           ref={inputRef}
           value={value}
           name={name}
           onChange={onChange}
           type={type}
+          className={error ? 'error' : ''}
           {...rest}
         />
-        {error && <span>{error}</span>}
+        {error && <span className="error">{error}</span>}
 
         <Label.Text>{label}:</Label.Text>
       </Label>

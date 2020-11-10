@@ -7,13 +7,19 @@ export const Wrapper = styled.div`
   textarea {
     min-height: 150px;
   }
-  
+
   input[type='color'] {
     padding-left: 56px;
   }
 `
 
-export const Label: any = styled.label``
+export const Label: any = styled.label`
+  .error {
+    color: red;
+    font-size: 25px;
+    font-weight: 700;
+  }
+`
 
 Label.Text = styled.span`
   color: #e5e5e5;
