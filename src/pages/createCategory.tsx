@@ -1,8 +1,9 @@
+import { useRef, useState } from 'react'
 import Head from 'next/head'
 import { GetServerSideProps } from 'next'
-import { useRef, useState } from 'react'
 import { FormHandles, SubmitHandler } from '@unform/core'
 import { Form } from '@unform/web'
+import * as yup from 'yup'
 
 import { useRouter } from 'next/router'
 import fetchData from '../Hooks/useApi'
@@ -13,6 +14,7 @@ import FormField from '../components/FormField'
 import Button from '../components/Button'
 
 import { Wrapper } from '../styles/wrapper'
+import api from '../services/axios'
 
 interface FormDataProps {
   name: string
@@ -21,20 +23,46 @@ interface FormDataProps {
 
 export default function createCategory({ categories }) {
   const [name, setName] = useState('')
-  const [color, setColor] = useState('')
+  const [color, setColor] = useState('#ffffff')
 
   const router = useRouter()
 
   const formRef = useRef<FormHandles>(null)
-  const handleSubmit: SubmitHandler<FormDataProps> = (
+  const handleSubmit: SubmitHandler<FormDataProps> = async (
     data,
     { reset },
     event
   ) => {
-    event.preventDefault()
-    reset()
+    try {
+      formRef.current.setErrors({})
 
-    router.push('/')
+      const schema = yup.object().shape({
+        title: yup.string().min(3).max(20).required(),
+      })
+
+      await schema.validate(data, {
+        abortEarly: false,
+      })
+
+      event.preventDefault()
+
+      const response = await api.post('categories?_embed=videos', data)
+
+      if (response.status === 201) {
+        reset()
+        alert('Cadastro realizado com sucesso')
+        router.push('/')
+      }
+
+    } catch (err) {
+      const validationErrors = {}
+      if (err instanceof yup.ValidationError) {
+        err.inner.forEach(error => {
+          validationErrors[error.path] = error.message
+        })
+        formRef.current.setErrors(validationErrors)
+      }
+    }
   }
 
   return (
@@ -47,27 +75,19 @@ export default function createCategory({ categories }) {
       <Wrapper>
         <h1>Cadastro de categoria:</h1>
 
-        <Form
-          ref={formRef}
-          onSubmit={handleSubmit}
-          initialData={{
-            name: '',
-            description: '',
-            color: '',
-          }}
-        >
+        <Form ref={formRef} onSubmit={handleSubmit}>
           <FormField
-            label="Nome da categoria"
+            label="Titulo da categoria"
             type="text"
-            name="name"
+            name="title"
             value={name}
             onChange={event => setName(event.target.value)}
           />
 
           <FormField
-            label="Color"
+            label="Cor"
             type="color"
-            name="name"
+            name="color"
             value={color}
             onChange={event => setColor(event.target.value)}
           />
@@ -75,7 +95,7 @@ export default function createCategory({ categories }) {
           <Button type="submit">Cadastrar categoria</Button>
         </Form>
 
-        <h1>Categorias existentes:</h1>
+        <h1 className="category">Categorias existentes:</h1>
 
         <ul>
           {categories.map(category => {
