@@ -85,5 +85,11 @@ $ yarn build or npm run build
 $ yarn server or npm run server
 ```
 
+#### Screenshot
+
+<img src="./.github/screenshot.png" width="400" height="250" >
+
+---
+
 #### This project is a new version of Renanflix
 [Renanflix](https://github.com/r3nanp/renanflix)
