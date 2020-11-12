@@ -25,6 +25,7 @@
 - Typescript
 - Unform
 - axios
+- Yup
 - json-server
 - react-multi-carousel
 - styled-components
