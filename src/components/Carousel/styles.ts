@@ -22,14 +22,3 @@ export const Title = styled.h2`
     padding: 10px;
   }
 `
-
-export const SliderItem = styled.div`
-  margin-right: 16px;
-  width: fit-content;
-  > img {
-    margin: 16px;
-    width: 298px;
-    height: 197px;
-    object-fit: cover;
-  }
-`
