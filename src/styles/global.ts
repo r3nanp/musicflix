@@ -17,14 +17,13 @@ export default createGlobalStyle`
   }
 
   :root {
-    --primary: ${props => props.theme.colors.primary};
-    --white: ${props => props.theme.colors.white};
-    --background: ${props => props.theme.colors.background};
-    --blackLighter: ${props => props.theme.colors.blackLighter};
-    --grayLight: ${props => props.theme.colors.grayLight};
-    --grayMedium: ${props => props.theme.colors.grayMedium};
-    --lightblue: ${props => props.theme.colors.lightblue};
-    --green: ${props => props.theme.colors.green};
-    --outline: ${props => props.theme.colors.outline}; 
+    ${props => {
+      const theme = props.theme.colors
+      let append = ''
+      Object.entries(theme).forEach(([prop, value]) => {
+        append += `--${prop}: ${value};`
+      })
+      return append
+    }}
   }
 `
