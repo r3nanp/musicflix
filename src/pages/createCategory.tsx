@@ -12,7 +12,6 @@ import { FormHandles, SubmitHandler } from '@unform/core'
 import { Form } from '@unform/web'
 import * as yup from 'yup'
 
-
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import FormField from '../components/FormField'
