@@ -1,12 +1,16 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { useRef, useState } from 'react'
-import Head from 'next/head'
+import { useRouter } from 'next/router'
 import { GetServerSideProps } from 'next'
+import Head from 'next/head'
+
+import { DataOptions } from '../@types'
 import { FormHandles, SubmitHandler } from '@unform/core'
 import { Form } from '@unform/web'
 import * as yup from 'yup'
 
-import { useRouter } from 'next/router'
-import fetchData from '../Hooks/useApi'
+import { fetchData } from '../hooks/useApi'
+import api from '../services/axios'
 
 import Header from '../components/Header'
 import Footer from '../components/Footer'
@@ -14,14 +18,13 @@ import FormField from '../components/FormField'
 import Button from '../components/Button'
 
 import { Wrapper } from '../styles/wrapper'
-import api from '../services/axios'
 
 interface FormDataProps {
   name: string
   color: string
 }
 
-export default function createCategory({ categories }) {
+function CreateCategory({ categories }): JSX.Element {
   const [name, setName] = useState('')
   const [color, setColor] = useState('#ffffff')
 
@@ -37,7 +40,7 @@ export default function createCategory({ categories }) {
       formRef.current.setErrors({})
 
       const schema = yup.object().shape({
-        title: yup.string().min(3).max(20).required(),
+        title: yup.string().min(3).max(20).required()
       })
 
       await schema.validate(data, {
@@ -53,7 +56,6 @@ export default function createCategory({ categories }) {
         alert('Cadastro realizado com sucesso')
         router.push('/')
       }
-
     } catch (err) {
       const validationErrors = {}
       if (err instanceof yup.ValidationError) {
@@ -96,11 +98,10 @@ export default function createCategory({ categories }) {
         </Form>
 
         <h1 className="category">Categorias existentes:</h1>
-
         <ul>
-          {categories.map(category => {
-            return <li key={category.title}>{category.title}</li>
-          })}
+          {categories.map(category => (
+            <li key={category.title}>{category.title}</li>
+          ))}
         </ul>
       </Wrapper>
 
@@ -117,3 +118,5 @@ export const getServerSideProps: GetServerSideProps = async () => {
     },
   }
 }
+
+export default CreateCategory
