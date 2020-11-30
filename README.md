@@ -1,6 +1,6 @@
 <div align="center">
 
-# Musicflix 🔥
+# 🔥 Musicflix 
 
 </div>
 
