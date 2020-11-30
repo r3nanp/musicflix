@@ -10,10 +10,7 @@ interface Carousel {
   category: DataOptions
 }
 
-const Carousel: React.FC<Carousel> = ({
-  category,
-  ignoreFirstVideo,
-}) => {
+const Carousel: React.FC<Carousel> = ({ category, ignoreFirstVideo }) => {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
