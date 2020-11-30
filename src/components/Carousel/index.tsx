@@ -3,6 +3,7 @@ import Slider from './components/Slider'
 import VideoCard from './components/VideoCard'
 import SliderItem from './components/SliderItem'
 
+import { DataOptions } from '../../@types'
 import { Container, Title } from './styles'
 
 interface Carousel {
