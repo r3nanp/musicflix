@@ -2,6 +2,12 @@
   "name": "musicflix",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
+  "author": {
+    "name": "Renan Pereira",
+    "email": "renanmol87@gmail.com",
+    "url": "https://github.com/r3nanp"
+  },
   "scripts": {
     "start": "node server.js",
     "dev": "next dev",
