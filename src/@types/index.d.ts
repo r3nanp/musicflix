@@ -1,8 +1,8 @@
-interface LoadingProps {
+export interface LoadingProps {
   isLoading: boolean
 }
 
-interface DataOptions {
+export interface DataOptions {
   title: string
   color: string
   videos: Array<{
