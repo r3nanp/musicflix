@@ -13,7 +13,8 @@
     "dev": "next dev",
     "build": "next build",
     "begin": "next start",
-    "server": "yarn start"
+    "server": "yarn start",
+    "lint": "eslint --ext .tsx,.ts,.js src/"
   },
   "dependencies": {
     "@unform/core": "^2.1.3",
