@@ -3,9 +3,7 @@
 
 name: Lint code
 
-on:
-  push:
-    [main]
+on: [push]
 
 jobs:
   build:
@@ -24,4 +22,5 @@ jobs:
         node-version: ${{ matrix.node-version }}
 
     - name: Run ESLint
+      run: echo Running Eslint 
       run: yarn lint
