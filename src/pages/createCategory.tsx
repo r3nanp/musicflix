@@ -24,7 +24,7 @@ interface FormDataProps {
   color: string
 }
 
-function CreateCategory({ categories }): JSX.Element {
+export default function CreateCategory({ categories }): JSX.Element {
   const [name, setName] = useState('')
   const [color, setColor] = useState('#ffffff')
 
@@ -118,5 +118,3 @@ export const getServerSideProps: GetServerSideProps = async () => {
     },
   }
 }
-
-export default CreateCategory
