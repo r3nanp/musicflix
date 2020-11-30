@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 
@@ -48,15 +49,13 @@ export default function CreateVideo() {
       event.preventDefault()
 
       const response = await api.post('videos?_embed=videos', data)
-  
+
       if (response.status === 201) {
         reset()
         alert('Cadastro realizado com sucesso')
         router.push('/')
       }
-    }
-
-    catch (err) {
+    } catch (err) {
       const validationErrors = {}
       if (err instanceof yup.ValidationError) {
         err.inner.forEach(error => {
@@ -77,15 +76,7 @@ export default function CreateVideo() {
       <Wrapper>
         <h1>Cadastro de vídeo:</h1>
 
-        <Form
-          ref={formRef}
-          onSubmit={handleSubmit}
-          initialData={{
-            title: 'Someday',
-            url: 'https://www.youtube.com/watch?v=knU9gRUWCno',
-            categoryId: 2,
-          }}
-        >
+        <Form ref={formRef} onSubmit={handleSubmit}>
           <FormField
             label="Título do vídeo"
             type="text"
