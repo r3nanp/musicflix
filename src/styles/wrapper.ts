@@ -12,8 +12,4 @@ export const Wrapper = styled.main`
     margin: 25px 0;
     text-align: left;
   }
-
-  > ul {
-    list-style-type: none;
-  }
 `

@@ -9,11 +9,15 @@ export default createGlobalStyle`
   body {
     background: var(--background);
     color: var(--white);
-    font: 400 16px Roboto, system-ui, sans-serif;
+    font: 400 16px 'Roboto', system-ui, sans-serif;
   }
   input, button {
     outline: none;
     border: none;
+  }
+
+  ul {
+    list-style-type: none;
   }
 
   :root {
