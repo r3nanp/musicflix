@@ -4,12 +4,15 @@ import { AiOutlineLinkedin, AiOutlineGithub } from 'react-icons/ai'
 export const Container = styled.footer`
   background: var(--outline);
   border-top: 2px solid var(--primary);
-  
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
+
+  position: sticky;
+  top: 0;
 
   padding: 32px 16px;
 
@@ -28,9 +31,10 @@ const iconCss = css`
   height: 40px;
   fill: white;
   flex-shrink: 0;
-  transition: 0.4s;
+  transition: all 0.4s;
   cursor: pointer;
   margin: 5px;
+
   &:hover {
     fill: var(--blackLighter);
   }
