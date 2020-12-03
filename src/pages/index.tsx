@@ -2,7 +2,7 @@
 import Head from 'next/head'
 import { GetStaticProps } from 'next'
 import { DataOptions } from '../@types'
-import { fetchData } from '../hooks/useApi'
+import fetchData from '../hooks/useApi'
 
 import Layout from '../components/Layout'
 import BannerMain from '../components/BannerMain'

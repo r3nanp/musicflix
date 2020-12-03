@@ -13,6 +13,7 @@ export const Wrapper = styled.div`
   }
 `
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const Label: any = styled.label`
   .error {
     color: red;

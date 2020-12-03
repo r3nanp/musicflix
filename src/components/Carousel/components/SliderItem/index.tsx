@@ -1,4 +1,3 @@
-import React from 'react'
 import LoadingMain from '../../../Shimmer/LoadingMain'
 import { LoadingProps } from '../../../../@types'
 

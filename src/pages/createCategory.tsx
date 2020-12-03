@@ -5,7 +5,7 @@ import { GetStaticProps } from 'next'
 import Head from 'next/head'
 
 import { DataOptions } from '../@types'
-import { fetchData } from '../hooks/useApi'
+import fetchData from '../hooks/useApi'
 import api from '../services/axios'
 
 import { FormHandles, SubmitHandler } from '@unform/core'

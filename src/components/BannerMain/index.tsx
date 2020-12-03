@@ -26,7 +26,7 @@ const BannerMain: React.FC<VideoProps> = ({ url, videoTitle }) => {
         </WrapperItem>
 
         <WrapperItem>
-          <YoutubeIFrame youtubeID={youTubeID}  />
+          <YoutubeIFrame youtubeID={youTubeID} />
         </WrapperItem>
       </WrapperContent>
     </Container>
@@ -34,4 +34,3 @@ const BannerMain: React.FC<VideoProps> = ({ url, videoTitle }) => {
 }
 
 export default BannerMain
-

@@ -22,7 +22,7 @@ const VideoCard: React.FC<VideoCardProps> = ({
       href={videoURL}
       target="_blank"
       rel="noopener noreferrer"
-      style={{ backgroundImage: `url(${image})`, borderColor: categoryColor || 'blue',  }}
+      style={{ backgroundImage: `url(${image})`, borderColor: categoryColor || 'blue', }}
       title={videoTitle}
     />
   )

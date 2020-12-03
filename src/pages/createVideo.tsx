@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 
@@ -14,7 +13,7 @@ import FormField from '../components/FormField'
 
 import { Wrapper } from '../styles/wrapper'
 
-export default function CreateVideo() {
+export default function CreateVideo(): JSX.Element {
   const [category, setCategory] = useState('')
   const [title, setTitle] = useState('')
   const [url, setUrl] = useState('')

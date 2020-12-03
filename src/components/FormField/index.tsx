@@ -20,7 +20,6 @@ const FormField: React.FC<FormField> = ({
   name,
   value,
   onChange,
-  suggestions,
   ...rest
 }) => {
   const inputRef = useRef<HTMLInputElement>(null)

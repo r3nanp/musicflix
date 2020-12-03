@@ -1,12 +1,10 @@
-import React from 'react'
-
 import { VideoContainer, IFrameContainer } from './styles'
 
-interface Props {
+interface YoutubeIFrameProps {
   youtubeID: string
 }
 
-const YoutubeIFrame: React.FC<Props> = ({ youtubeID }) => {
+const YoutubeIFrame: React.FC<YoutubeIFrameProps> = ({ youtubeID }) => {
   return (
     <VideoContainer>
       <IFrameContainer
