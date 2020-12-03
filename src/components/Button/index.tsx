@@ -1,8 +1,11 @@
-import React, { ButtonHTMLAttributes } from 'react'
+import { ButtonHTMLAttributes } from 'react'
 
 import { CreateButton } from './styles'
 
-const Button: React.FC<ButtonHTMLAttributes<HTMLButtonElement>> = ({ children, type }) => {
+const Button: React.FC<ButtonHTMLAttributes<HTMLButtonElement>> = ({
+  children,
+  type,
+}) => {
   return <CreateButton type={type}>{children}</CreateButton>
 }
 
