@@ -14,7 +14,7 @@ export const CreateButton = styled.button<ButtonProps>`
   padding: 16px 24px;
   font-size: 16px;
   font-weight: 700;
-  transition: 0.3s;
+  transition: all 0.3s;
 
   &:hover {
     background: ${props => props.solid ? 'var(--blackLighter)' : 'var(--primary)'};
