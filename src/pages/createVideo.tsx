@@ -2,69 +2,66 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 
-import { useRef, useState } from 'react'
+import { useRef, useState, useCallback } from 'react'
 import { FormHandles, SubmitHandler } from '@unform/core'
 import { Form } from '@unform/web'
 import * as yup from 'yup'
+import api from '../services/axios'
 
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import FormField from '../components/FormField'
-import Button from '../components/Button'
 
 import { Wrapper } from '../styles/wrapper'
-import api from '../services/axios'
 
 export default function CreateVideo() {
   const [category, setCategory] = useState('')
   const [title, setTitle] = useState('')
   const [url, setUrl] = useState('')
 
+  const router = useRouter()
+
+  const formRef = useRef<FormHandles>(null)
   interface FormProps {
     title: string
     url: string
   }
 
-  const router = useRouter()
+  const handleSubmit: SubmitHandler<FormProps> = useCallback(
+    async (data, { reset }, event) => {
+      try {
+        formRef.current.setErrors({})
 
-  const formRef = useRef<FormHandles>(null)
-
-  const handleSubmit: SubmitHandler<FormProps> = async (
-    data,
-    { reset },
-    event
-  ) => {
-    try {
-      formRef.current.setErrors({})
-
-      const schema = yup.object().shape({
-        title: yup.string().min(3).max(40).required(),
-        url: yup.string().min(6).max(30).required(),
-      })
-
-      await schema.validate(data, {
-        abortEarly: false,
-      })
-
-      event.preventDefault()
-
-      const response = await api.post('videos?_embed=videos', data)
-
-      if (response.status === 201) {
-        reset()
-        alert('Cadastro realizado com sucesso')
-        router.push('/')
-      }
-    } catch (err) {
-      const validationErrors = {}
-      if (err instanceof yup.ValidationError) {
-        err.inner.forEach(error => {
-          validationErrors[error.path] = error.message
+        const schema = yup.object().shape({
+          title: yup.string().min(3).max(40).required(),
+          url: yup.string().min(6).max(30).required(),
         })
-        formRef.current.setErrors(validationErrors)
+
+        await schema.validate(data, {
+          abortEarly: false,
+        })
+
+        event.preventDefault()
+
+        const response = await api.post('videos?_embed=videos', data)
+
+        if (response.status === 201) {
+          reset()
+          alert('Cadastro realizado com sucesso')
+          router.push('/')
+        }
+      } catch (err) {
+        const validationErrors = {}
+        if (err instanceof yup.ValidationError) {
+          err.inner.forEach(error => {
+            validationErrors[error.path] = error.message
+          })
+          formRef.current.setErrors(validationErrors)
+        }
       }
-    }
-  }
+    },
+    []
+  )
 
   return (
     <>
@@ -101,7 +98,7 @@ export default function CreateVideo() {
             onChange={event => setCategory(event.target.value)}
           />
 
-          <Button type="submit">Cadastrar vídeo</Button>
+          <button type="submit">Cadastrar vídeo</button>
         </Form>
       </Wrapper>
 

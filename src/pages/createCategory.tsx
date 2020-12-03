@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-import { useRef, useState } from 'react'
+import { useCallback, useRef, useState } from 'react'
 import { useRouter } from 'next/router'
-import { GetServerSideProps } from 'next'
+import { GetStaticProps } from 'next'
 import Head from 'next/head'
 
 import { DataOptions } from '../@types'
@@ -15,7 +15,6 @@ import * as yup from 'yup'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import FormField from '../components/FormField'
-import Button from '../components/Button'
 
 import { Wrapper } from '../styles/wrapper'
 
@@ -26,46 +25,45 @@ interface FormDataProps {
 
 export default function CreateCategory({ categories }): JSX.Element {
   const [name, setName] = useState('')
-  const [color, setColor] = useState('#ffffff')
+  const [color, setColor] = useState('#000')
 
   const router = useRouter()
 
   const formRef = useRef<FormHandles>(null)
-  const handleSubmit: SubmitHandler<FormDataProps> = async (
-    data,
-    { reset },
-    event
-  ) => {
-    try {
-      formRef.current.setErrors({})
+  const handleSubmit: SubmitHandler<FormDataProps> = useCallback(
+    async (data, { reset }, event) => {
+      try {
+        formRef.current.setErrors({})
 
-      const schema = yup.object().shape({
-        title: yup.string().min(3).max(20).required()
-      })
-
-      await schema.validate(data, {
-        abortEarly: false,
-      })
-
-      event.preventDefault()
-
-      const response = await api.post('categories?_embed=videos', data)
-
-      if (response.status === 201) {
-        reset()
-        alert('Cadastro realizado com sucesso')
-        router.push('/')
-      }
-    } catch (err) {
-      const validationErrors = {}
-      if (err instanceof yup.ValidationError) {
-        err.inner.forEach(error => {
-          validationErrors[error.path] = error.message
+        const schema = yup.object().shape({
+          title: yup.string().min(3).max(20).required(),
         })
-        formRef.current.setErrors(validationErrors)
+
+        await schema.validate(data, {
+          abortEarly: false,
+        })
+
+        event.preventDefault()
+
+        const response = await api.post('categories?_embed=videos', data)
+
+        if (response.status === 201) {
+          reset()
+          alert('Cadastro realizado com sucesso')
+          router.push('/')
+        }
+      } catch (err) {
+        const validationErrors = {}
+        if (err instanceof yup.ValidationError) {
+          err.inner.forEach(error => {
+            validationErrors[error.path] = error.message
+          })
+          formRef.current.setErrors(validationErrors)
+        }
       }
-    }
-  }
+    },
+    []
+  )
 
   return (
     <>
@@ -94,7 +92,7 @@ export default function CreateCategory({ categories }): JSX.Element {
             onChange={event => setColor(event.target.value)}
           />
 
-          <Button type="submit">Cadastrar categoria</Button>
+          <button type="submit">Cadastrar categoria</button>
         </Form>
 
         <h1 className="category">Categorias existentes:</h1>
@@ -110,7 +108,7 @@ export default function CreateCategory({ categories }): JSX.Element {
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const response = await fetchData<DataOptions[]>('categories')
   return {
     props: {
