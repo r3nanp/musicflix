@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import Head from 'next/head'
-import { GetServerSideProps } from 'next'
+import { GetStaticProps } from 'next'
 import { DataOptions } from '../@types'
 import { fetchData } from '../hooks/useApi'
 
@@ -36,7 +36,7 @@ function Home({ data }): JSX.Element {
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const data = await fetchData<DataOptions[]>('categories?_embed=videos')
 
   return {
