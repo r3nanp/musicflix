@@ -4,6 +4,7 @@ import { AiOutlineLinkedin, AiOutlineGithub } from 'react-icons/ai'
 export const Container = styled.footer`
   background: var(--outline);
   border-top: 2px solid var(--primary);
+  height: 100%;
 
   display: flex;
   flex-direction: column;
