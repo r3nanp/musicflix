@@ -1,8 +1,4 @@
-export interface LoadingProps {
-  isLoading: boolean
-}
-
-export interface DataOptions {
+export interface IDataOptions {
   title: string
   color: string
   videos: Array<{
