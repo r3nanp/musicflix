@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import Head from 'next/head'
-import { GetStaticProps } from 'next'
-import { DataOptions } from '../@types'
+import { GetServerSideProps, InferGetServerSidePropsType } from 'next'
+import { IDataOptions } from '../repositories/IDataOptions'
 import fetchData from '../services/useApi'
 
 import Layout from '../components/Layout'
@@ -9,7 +9,9 @@ import BannerMain from '../components/BannerMain'
 import Carousel from '../components/Carousel'
 import LoadingGlobal from '../components/Shimmer/LoadingGlobal'
 
-function Home({ data }): JSX.Element {
+export default function Home({
+  data,
+}: InferGetServerSidePropsType<typeof getServerSideProps>): JSX.Element {
   if (!data) {
     return <LoadingGlobal />
   }
@@ -36,8 +38,8 @@ function Home({ data }): JSX.Element {
   )
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-  const data = await fetchData<DataOptions[]>('categories?_embed=videos')
+export const getServerSideProps: GetServerSideProps = async () => {
+  const data = await fetchData<IDataOptions[]>('categories?_embed=videos')
 
   return {
     props: {
@@ -45,5 +47,3 @@ export const getStaticProps: GetStaticProps = async () => {
     },
   }
 }
-
-export default Home

@@ -39,13 +39,11 @@ export default class MyDocument extends Document {
 
   render(): JSX.Element {
     return (
-      <Html lang="pt">
+      <Html lang="pt-BR">
         <Head>
           <meta charSet="utf-8" />
-          <link
-            rel="icon"
-            href="https://fontmeme.com/permalink/201106/b1e120aff119f6ac8c72bccd99141a17.png"
-          />
+          <link rel="icon" href="/favicon.ico" />
+          <link rel="preconnect" href="https://fonts.gstatic.com/" />
           <link
             href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700&display=swap"
             rel="stylesheet"

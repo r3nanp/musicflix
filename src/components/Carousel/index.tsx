@@ -3,21 +3,21 @@ import Slider from './components/Slider'
 import VideoCard from './components/VideoCard'
 import SliderItem from './components/SliderItem'
 
-import { DataOptions } from '../../@types'
+import { IDataOptions } from '../../repositories/IDataOptions'
 import { Container, Title } from './styles'
 
-interface Carousel {
+interface ICarouselProps {
   ignoreFirstVideo?: boolean
-  category: DataOptions
+  category: IDataOptions
 }
 
-const Carousel: React.FC<Carousel> = ({ category, ignoreFirstVideo }) => {
+const Carousel: React.FC<ICarouselProps> = ({ category, ignoreFirstVideo }) => {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false)
-    }, 2000)
+    }, 1000)
   }, [])
 
   const categoryTitle = category.title

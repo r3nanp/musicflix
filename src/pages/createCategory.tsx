@@ -1,16 +1,15 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-import { useCallback, useRef, useState } from 'react'
-import { useRouter } from 'next/router'
-import { GetStaticProps } from 'next'
-import Head from 'next/head'
-
-import { DataOptions } from '../@types'
-import fetchData from '../services/useApi'
-import api from '../services/axios'
-
 import { FormHandles, SubmitHandler } from '@unform/core'
 import { Form } from '@unform/web'
+import { useCallback, useRef, useState } from 'react'
+import { useRouter } from 'next/router'
+import { GetServerSideProps, InferGetServerSidePropsType } from 'next'
+import Head from 'next/head'
+
 import * as yup from 'yup'
+import { IDataOptions } from '../repositories/IDataOptions'
+import fetchData from '../services/useApi'
+import api from '../services/axios'
 
 import Header from '../components/Header'
 import Footer from '../components/Footer'
@@ -18,19 +17,21 @@ import FormField from '../components/FormField'
 
 import { Wrapper } from '../styles/wrapper'
 
-interface FormDataProps {
+interface IFormDataProps {
   name: string
   color: string
 }
 
-export default function CreateCategory({ categories }): JSX.Element {
+export default function CreateCategory({
+  categories,
+}: InferGetServerSidePropsType<typeof getServerSideProps>): JSX.Element {
   const [name, setName] = useState('')
   const [color, setColor] = useState('#000')
 
   const router = useRouter()
 
   const formRef = useRef<FormHandles>(null)
-  const handleSubmit: SubmitHandler<FormDataProps> = useCallback(
+  const handleSubmit: SubmitHandler<IFormDataProps> = useCallback(
     async (data, { reset }, event) => {
       try {
         formRef.current.setErrors({})
@@ -108,8 +109,8 @@ export default function CreateCategory({ categories }): JSX.Element {
   )
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-  const response = await fetchData<DataOptions[]>('categories')
+export const getServerSideProps: GetServerSideProps = async () => {
+  const response = await fetchData<IDataOptions[]>('categories')
   return {
     props: {
       categories: response,
